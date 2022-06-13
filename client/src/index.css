@@ -1,0 +1,45 @@
+/* body {
+  margin: 0;
+  background-image: url('./assets/aaa.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+html {
+  margin: 0;
+  background-image: url('./assets/aaa.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+.bienfait {
+  /* background: url("https://previews.123rf.com/images/motizova/motizova1608/motizova160800266/61508802-open-book-hardback-books-on-wooden-table-education-background-back-to-school-copy-space-for-text.jpg") !important; */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  width: 100%;
+  height: 450px;
+}
+.bienfait h1 {
+  text-align: left;
+  color: rgb(48, 122, 187);
+  font-size: 50px;
+  font-weight: bolder;
+}
+.bienfait p {
+  text-align: left;
+  padding: 5px;
+  line-height: 60px;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-weight: bolder;
+  /* width: 750px; */
+}

@@ -1,0 +1,25 @@
+.nav {
+  background-color: #c24d2c !important;
+}
+/* .input {
+    display: flex;
+    justify-content: space-evenly;
+} */
+/* .input {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    border: 5px solid white;
+} */
+#tounesimg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  object-position: initial;
+  
+
+
+}
+
+
+
