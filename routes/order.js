@@ -58,9 +58,17 @@ router.get("/getuserorders/:userid", async (req, res) => {
   try {
     const orders = await Order.find({ userid: userid }).sort({ _id: -1 });
 
-    //  res.send(orders)
     res.status(200).json({ status: true, msg: "Orders List", data: orders });
   } catch (error) {
+    return res.status(400).json({ msg: "SOMETHING WENT WRONG" });
+  }
+});
+
+router.get("/orderList", async (req, res) => {
+  try {
+    const orderList = await Order.find({});
+    res.status(200).json({ status: true, msg: "Orders List", data: orderList });
+  } catch (err) {
     return res.status(400).json({ msg: "SOMETHING WENT WRONG" });
   }
 });
