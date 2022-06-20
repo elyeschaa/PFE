@@ -9,6 +9,7 @@ const MONGO_URI = process.env.MONGO_URI;
 
 app.use(express.json());
 app.use("/api", require("./routes"));
+app.use(cors({ origin: "http://localhost:3000" }));
 
 mongoose
   .connect(MONGO_URI)

@@ -5,6 +5,9 @@ import { useDispatch } from "react-redux";
 import { login } from "../Redux/Actions/actions";
 import { useHistory } from "react-router-dom";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Login = () => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -32,7 +35,9 @@ const Login = () => {
         <input type="password" name="password" onChange={userLogin} />
       </div>
       <div className="last">
-        <button style={{backgroundColor:"#007cb9"}} onClick={handleLogin}>Connect</button>
+        <button style={{ backgroundColor: "#007cb9" }} onClick={handleLogin}>
+          Connect
+        </button>
       </div>
     </div>
   );

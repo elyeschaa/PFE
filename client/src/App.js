@@ -1,6 +1,7 @@
 //Packages
 import { useEffect, useState } from "react";
 import { Switch, Route, Redirect, useParams } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 
@@ -11,7 +12,7 @@ import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
 import Nav from "./components/Nav/Nav";
 import BookCard from "./components/BookCard/BookCard";
-import Admin from "./components/Admin/Admin";
+import Profile from "./components/Profile/Profile";
 
 //Pages
 import Home from "./pages/Home/Home";
@@ -19,11 +20,15 @@ import BookDescription from "./pages/BookDescription/BookDescription";
 import Checkout from "./pages/Checkout/Checkout";
 import Addbook from "./components/Modal/Addbook";
 
-import "./App.css";
+//Admin
+import Admin from "./components/Admin/Admin";
 import UsersList from "./components/UserList/UserList";
 import ProductsList from "./components/ProductList/ProductList";
 import AddNewProduct from "./components/AddNewProduct/AddNewProduct";
 import OrdersList from "./components/OrderList/OrderList";
+
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
 
 function App() {
   const param = useParams();
@@ -35,7 +40,7 @@ function App() {
   const [show, setShow] = useState(false);
   const [userList, setUserList] = useState([]);
   const [orderList, setOrderList] = useState([]);
-  // const location = window.location.href;
+  const [profile, setProfile] = useState({});
 
   useEffect(() => {
     axios
@@ -59,6 +64,15 @@ function App() {
         setOrderList(res.data.data);
       })
       .catch((err) => console.log(err));
+
+    if (localStorage.getItem("token")) {
+      axios
+        .get(
+          `/api/user/profile/${jwt_decode(localStorage.getItem("token")).id}`
+        )
+        .then((res) => setProfile(res.data.data))
+        .catch((err) => console.error(err));
+    }
   }, []);
 
   const handleRating = (newRating) => {
@@ -72,13 +86,6 @@ function App() {
   const handleModal = () => {
     setShow(!show);
   };
-  // const handleAddBook = (e) => {
-  //   setNewBook({ ...newBook, [e.target.name]: e.target.value });
-  // };
-
-  // const handleSetBookImg = (e) => {
-  //   setBookImg(e.target.files[0]);
-  // };
 
   return (
     <div className="App">
@@ -90,14 +97,9 @@ function App() {
         cartItems={cartItems}
         handleModal={handleModal}
       />
-      <Addbook
-        show={show}
-        handleModal={handleModal}
-        // newBook={newBook}
-        // handleAddBook={handleAddBook}
-        // handleSetBookImg={handleSetBookImg}
-        // bookImg={bookImg}
-      />
+      <ToastContainer />
+
+      <Addbook show={show} handleModal={handleModal} />
       <Switch>
         <Route exact path="/ateurCelebre" render={() => <Auteurcelebre />} />
         <Route
@@ -154,6 +156,15 @@ function App() {
           path="/admin/ordersList"
           render={() => <OrdersList orderList={orderList} />}
         />
+        {localStorage.getItem("token") ? (
+          <Route
+            exacst
+            path="/profile"
+            render={() => <Profile profile={profile} setProfile={setProfile} />}
+          />
+        ) : (
+          <Redirect to="/" />
+        )}
         {localStorage.getItem("token") ? (
           jwt_decode(localStorage.getItem("token")).isAdmin ? (
             <Route path="/admin" render={() => <Admin />} />

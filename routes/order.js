@@ -36,7 +36,6 @@ router.post("/placeorder", async (req, res) => {
         shippingAdress: {
           street: token.card.address_line1,
           city: token.card.address_city,
-          // country : token.card.address.country,
           pincode: token.card.address_zip,
         },
         transactionId: payment.source.id,

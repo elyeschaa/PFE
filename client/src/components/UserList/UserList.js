@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import Loader from "../Loader/Loader";
+import React, { useEffect } from "react";
+import { toast } from "react-toastify";
 import axios from "axios";
 import "./UserList.css";
 
@@ -32,7 +32,14 @@ function UsersList({ userList }) {
                   <i
                     class="far fa-trash-alt "
                     onClick={() => {
-                      // dispatch(deleteUser(user._id));
+                      axios
+                        .delete(`/api/admin/deleteUser/${user._id}`)
+                        .then((res) => {
+                          toast.success(
+                            `${user.firstName} ${user.lastName} has been deleted`
+                          );
+                        })
+                        .catch((err) => console.log(err));
                     }}
                   ></i>
                 </td>
