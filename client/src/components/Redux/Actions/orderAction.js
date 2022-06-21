@@ -2,11 +2,6 @@ import axios from "axios";
 
 export const placeOrder =
   (token, subtotal, currentUser, cartItems) => async (dispatch, getState) => {
-    // const currentUser = getState().loginUserReducer.currentUser;
-    // console.log(currentUser);
-
-    // const cartItems = getState().cartReducer.cartItems;
-
     dispatch({
       type: "PLACE_ORDER_REQUEST",
     });
@@ -30,7 +25,6 @@ export const placeOrder =
   };
 
 export const getUserOrders = () => async (dispatch, getState) => {
-  // const currentUser= getState.loginUserReducer.currentUser
   const user = localStorage.getItem("currentUser");
   const userid = JSON.parse(user)._id;
 

@@ -76,18 +76,18 @@ const Center = styled.div`
 
 const Footer = () => {
   return (
-    <Container style={{color:"white"}}>
-      <Left style={{color:"white"}}>
-        <Logo style={{color:"white"}}>
+    <Container style={{ color: "white" }}>
+      <Left style={{ color: "white" }}>
+        <Logo style={{ color: "white" }}>
           TOUNES TA9RA <div className=""></div>
         </Logo>
-        <Desc style={{color:"white"}}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor fugiat
-          laboriosam unde hic quo. Fuga temporibus, quas quos facilis sequi
-          illum at dolor nihil neque magnam, corrupti numquam voluptates
-          ratione.
+        <Desc style={{ color: "white" }}>
+          La lecture est ainsi faite de ce que nous savons, de ce que nous
+          apprenons et de ce que nous n'apprenons que parce que nous le savions
+          déjà et de ce que nous savons mieux maintenant parce que nous venons
+          de le rapprendre.
         </Desc>
-        <SocialContainer >
+        <SocialContainer>
           <SocialIcon color="#385999">
             <Facebook />
           </SocialIcon>
@@ -100,36 +100,35 @@ const Footer = () => {
         </SocialContainer>
       </Left>
       <Center>
-        <Title style={{color:"white"}}>Useful Links</Title>
-        <List style={{color:"white"}}>
-          <ListItem>Home</ListItem>
-          <ListItem>Cart</ListItem>
-          <ListItem>Man Fashion</ListItem>
-          <ListItem>Woman Fashion</ListItem>
-          <ListItem>Accessoiries</ListItem>
-          <ListItem>My Account</ListItem>
-          <ListItem>Order Tracking</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Sales</ListItem>
-          <ListItem>Terms</ListItem>
+        <Title style={{ color: "white" }}>Genre</Title>
+        <List style={{ color: "white" }}>
+          <ListItem>classique</ListItem>
+          <ListItem>Romans</ListItem>
+          <ListItem>Philosophie</ListItem>
+          <ListItem>Développement personnel</ListItem>
+          <ListItem>Sciences</ListItem>
+          <ListItem>Dictionnaire</ListItem>
+          <ListItem>Politique</ListItem>
+          <ListItem>Poésie</ListItem>
         </List>
       </Center>
 
       <Right>
-        <Title style={{color:"white"}}>Contact</Title>
+        <Title style={{ color: "white" }}>Contact</Title>
         <ContactItem>
-          <Room style={{ marginRight: "10px" ,color:"white"}} /> 622 Beja Avenir , Beja Nord
-          9000
+          <Room style={{ marginRight: "10px", color: "white" }} /> 622 manouba ,
+          mornaguia 1110
         </ContactItem>
 
         <ContactItem>
           {" "}
-          <Phone style={{ marginRight: "10px",color:"white" }} /> +216 26 214 214{" "}
+          <Phone style={{ marginRight: "10px", color: "white" }} /> +216 26 214
+          214{" "}
         </ContactItem>
 
         <ContactItem>
-          <MailOutline style={{ marginRight: "10px",color:"white" }} />
-          contact@balti.com
+          <MailOutline style={{ marginRight: "10px", color: "white" }} />
+          contact@tounesta9ra.com
         </ContactItem>
 
         <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />

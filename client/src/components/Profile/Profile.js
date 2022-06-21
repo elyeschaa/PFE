@@ -19,7 +19,7 @@ const Profile = ({ profile, setProfile }) => {
     axios
       .put(`/api/user/editProfile/${profile._id}`, { ...profile })
       .then((res) => {
-        toast.success("Profile Edited");
+        toast.success("Le profile a été modifié");
       })
       .catch((err) => {
         toast.error(err.message);

@@ -26,6 +26,7 @@ import UsersList from "./components/UserList/UserList";
 import ProductsList from "./components/ProductList/ProductList";
 import AddNewProduct from "./components/AddNewProduct/AddNewProduct";
 import OrdersList from "./components/OrderList/OrderList";
+import EditBook from "./components/EditBook/EditBook";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
@@ -123,7 +124,7 @@ function App() {
             />
           )}
         />
-        Quantity
+        Quantite
         <Route
           path="/checkout"
           render={() => (
@@ -145,6 +146,11 @@ function App() {
           exact
           path="/admin/productsList"
           render={() => <ProductsList books={books} />}
+        />
+        <Route
+          exact
+          path={`/admin/editBook/:id`}
+          render={() => <EditBook books={books} />}
         />
         <Route
           exact

@@ -22,7 +22,7 @@ const Login = () => {
   return (
     <div className="register">
       <h1>
-        Welcome To Our <span style={{ color: "#007cb9" }}>Community</span>{" "}
+        Welcome To Our <span style={{ color: "#007cb9" }}>Bienvenue</span>{" "}
       </h1>
       <h1>
         <FaBook style={{ color: "#007cb9" }} />
@@ -31,12 +31,12 @@ const Login = () => {
         <label>Email</label>
         <input type="text" name="email" onChange={userLogin} />
 
-        <label>Password</label>
+        <label>Mot de passe</label>
         <input type="password" name="password" onChange={userLogin} />
       </div>
       <div className="last">
         <button style={{ backgroundColor: "#007cb9" }} onClick={handleLogin}>
-          Connect
+          Connecter
         </button>
       </div>
     </div>

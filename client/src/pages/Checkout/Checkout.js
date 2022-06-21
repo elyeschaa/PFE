@@ -21,7 +21,6 @@ export default function Checkout({ cartItems, setCartItems }) {
     }, 0);
   }, [cartItems]);
 
-  console.log(subtotal);
 
   function tokenHander(token) {
     dispatch(placeOrder(token, subtotal, id, cartItems));
@@ -51,9 +50,8 @@ export default function Checkout({ cartItems, setCartItems }) {
     <div>
       <div className="row" style={{ marginLeft: "33px" }}>
         <div className="col-md-6">
-          <h2 style={{ fontSize: "40px" }}>My book</h2>
+          <h2 style={{ fontSize: "40px" }}>Mon livre</h2>
           {cartItems.map((item) => {
-            console.log(item._id);
             return (
               <div>
                 <div className="flex-container">
@@ -65,8 +63,8 @@ export default function Checkout({ cartItems, setCartItems }) {
                       style={{ height: "300px", width: "250px" }}
                     />
                     <h1>
-                      Price : X {item.prices}
-                      USD
+                      prix : X {item.prices}
+                      DT
                     </h1>
                     
                     <h1 style={{ display: "inline" }}>Quantity :</h1>
@@ -122,7 +120,7 @@ export default function Checkout({ cartItems, setCartItems }) {
               style={{ marginTop: "200px", marginRight: "10px" }}
               className="btn"
             >
-              Pay Now
+              Payez
             </Button>
           </StripeCheckout>
           {/* <Checkout subtotal={subtotal} /> */}

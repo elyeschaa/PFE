@@ -7,8 +7,7 @@ export const register = (user) => async (dispatch) => {
     await axios
       .post("/api/user/register", user)
       .then((res) => {
-        toast.success("Successfully registerd");
-        console.log(res.data);
+        toast.success("Enregistré avec succes");
       })
       .catch((err) => {
         toast.error("Invalid");
@@ -25,19 +24,18 @@ export const login = (payload) => async (dispatch) => {
     await axios
       .post("/api/user/login", payload.newUser)
       .then((res) => {
-        console.log(res.data, "omaaaaaaaaaaaaar is here");
         localStorage.setItem("token", res.data.token);
         payload.history.push("/");
         payload.history.go(0);
-        toast.success("Welcome Back");
+        toast.success("Bienvenue");
       })
       .catch((err) => {
-        toast.error("Invalid Credentials");
+        toast.error("Les informations d'identification invalides");
         console.log(err);
       });
   } catch (error) {
     if (error) {
-      toast.error("Invalid Credentials");
+      toast.error("Les informations d'identification invalides");
       console.log(error);
     }
   }

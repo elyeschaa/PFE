@@ -3,14 +3,14 @@ import moment from "moment";
 function OrdersList({ orderList, user }) {
   return (
     <div>
-      <h2 className="usertitle">Orders List</h2>
+      <h2 className="usertitle">Liste des commandes</h2>
       <table className="tbadmin table table-bodered ">
         <thead>
           <tr>
-            <th>Orders ID</th>
+            <th>Identifiant des commandes</th>
             {/* <th>Emails</th> */}
             {/* <th>Users ID</th> */}
-            <th>Amount</th>
+            <th>Prix</th>
             <th>Date</th>
             {/* <th>Delivered</th> */}
             <th>Transactions ID</th>

@@ -5,7 +5,7 @@ const Auteurcelebre = () => {
   return (
     <div>
       <h1 style={{ color: "black" }}>
-The most famous authors</h1>
+Les auteurs célèbres</h1>
       
       <div class="a-box">
         <div class="img-container">

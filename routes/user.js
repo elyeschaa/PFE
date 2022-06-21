@@ -22,8 +22,6 @@ router.put("/editProfile/:id", async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashed_password = await bcrypt.hash(req.body.password, salt);
 
-    console.log(hashed_password);
-
     await User.findByIdAndUpdate(id, {
       ...req.body,
       password: hashed_password,

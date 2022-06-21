@@ -39,7 +39,6 @@ const Nav = ({
     history.go(0);
   };
 
-  console.log(cartItems);
 
   return (
     <div>
@@ -47,7 +46,7 @@ const Nav = ({
         <Navbar
           bg="#56bfb5"
           variant="#56bfb5"
-          style={{ backgroundColor: "#0c005a", height: "120px" }}
+          style={{ backgroundColor: "#0c005a",height:" 120px " }}
         >
           <Container id="container">
             <Navbar.Brand href="/">
@@ -61,20 +60,23 @@ const Nav = ({
               />
             </Navbar.Brand>
             <div>
-              <div onClick={() => history.push("/bookList")}>
+            <div onClick={() => history.push("/bookList")}>
                 <input
                   style={{
-                    color: "red",
-                    marginLeft: "350px",
-                    borderRadius: "10px",
-                    boxShadow: "inherit",
-                    border: "solid ",
+                    fontSize: "12px",
+                    marginTop: "5px",
+                    // height:"37px",
+                    // background: "#6dc6e3",
+                    textDecoration: "none",
+                    color: "white",
+                    borderRadius: "20px",
                   }}
                   placeholder="search "
                   value={input}
                   onChange={handleInput}
                 />
               </div>
+             
             </div>
 
             <div className="my-links">
@@ -82,13 +84,16 @@ const Nav = ({
                 <Link>
                   <Button
                     style={{
-                      borderRadius: "20px",
-                      fontSize: "17px",
-                      marginTop: "10px",
+                      fontSize: "12px",
+                marginTop: "5px",
+                      // height:"37px",
+                      // background: "#6dc6e3",
+                      textDecoration: "none",
+                      color: "white",
                     }}
                     onClick={bookListNavigate}
                   >
-                    Book List
+                  les livres
                   </Button>
                 </Link>
 
@@ -96,14 +101,17 @@ const Nav = ({
                   <Button
                     className="but"
                     style={{
-                      borderRadius: "20px",
-                      fontSize: "17px",
-                      marginTop: "10px",
+                      fontSize: "12px",
+                marginTop: "5px",
+                      // height:"37px",
+                      // background: "#6dc6e3",
+                      textDecoration: "none",
+                      color: "white",
                     }}
                     onClick={ateurNavigate}
                   >
                     {/* <h5 style={{ color: "bleu" }}> */}
-                    Famous Authors
+                    Auteurs célèbres
                     {/* </h5> */}
                   </Button>
                 </Link>
@@ -111,10 +119,10 @@ const Nav = ({
                 <Link style={{ color: "bleu" }}>
                   <a
                     style={{
-                      borderRadius: "20px",
-                      fontSize: "12px",
-                      marginTop: "14px",
-
+                      fontSize: "10px",
+                      marginTop: "5px",
+                      // height:"37px",
+                      // background: "#6dc6e3",
                       textDecoration: "none",
                       color: "white",
                     }}
@@ -122,10 +130,10 @@ const Nav = ({
                     href="/cart"
                     onClick={cartNavigate}
                   >
-                    CART : {cartItems.length} Items
+                    Panier : {cartItems.length} Items
                   </a>
                 </Link>
-                <img
+                {/* <img
                   style={{
                     width: "25PX",
                     height: "25px",
@@ -133,32 +141,44 @@ const Nav = ({
                     marginRight: "30px",
                   }}
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYB28EWV01huyaUmy7FIjBgknLXIHsW13Syq6-xcjOrm2k5OvLnBXaSG6wr6pFkgDtjyo&usqp=CAU"
-                />
+                /> */}
                 <Link>
                   <Button
-                    style={{ marginTop: "10px", border: "1px solid white" }}
+                    style={{
+                      fontSize: "12px",
+                      marginTop: "5px",
+                      // height:"37px",
+                      // background: "#6dc6e3",
+                      textDecoration: "none",
+                      color: "white",
+                    }}
                     onClick={handleModal}
                   >
-                    add book
+                   ajouter livres
                   </Button>
                 </Link>
+
                 <Link to="/profile">
-                  <Button style={{ marginTop: "10px" }}>Profile</Button>
+                  <Button style={{fontSize: "12px",
+                  marginTop: "5px",
+                  // backgroundColor: "red",
+                  color: "white",
+                  border: "1px solid white",}}>Profile</Button>
                 </Link>
                 <Link>
+               
                   <Button
                     className="but"
                     style={{
-                      marginLeft: "10px",
-                      fontSize: "17px",
-                      marginTop: "10px",
+                      fontSize: "12px",
+                      marginTop: "5px",
                       backgroundColor: "red",
                       color: "white",
                       border: "1px solid white",
                     }}
                     onClick={logout}
                   >
-                    Logout
+                      déconnection
                   </Button>
                 </Link>
               </div>
@@ -166,13 +186,13 @@ const Nav = ({
           </Container>
         </Navbar>
       ) : (
-        <Navbar
+        <Navbar  id="amin"
           bg="#0c005a"
           variant="dark"
-          style={{ backgroundColor: "#0c005a" }}
+          style={{ backgroundColor: "#0c005a" ,height:" 120px"}}
         >
-          <Container id="container">
-            <Navbar.Brand href="/">
+          <Container id="container" >
+            <Navbar.Brand  href="/">
               <img
                 alt=""
                 src="https://scontent.xx.fbcdn.net/v/t1.15752-9/286480039_557839856001487_1925133778716229833_n.png?stp=dst-png_p206x206&_nc_cat=107&ccb=1-7&_nc_sid=aee45a&_nc_ohc=cXrEeuUQp5cAX9pDFzs&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKHWBTuqKFDTOS67974Nf6KOQJ3UYo-VnaYxt8ineMnqA&oe=62C4DEB6"
@@ -183,10 +203,10 @@ const Nav = ({
             </Navbar.Brand>
             <div className="my-links">
               <Link to="/register" className="link">
-                <h5 style={{ color: "white" }}>sign up</h5>
+                <h5 style={{ color: "white" }}>s'inscrir</h5>
               </Link>
               <Link to="/login" className="link">
-                <h5 style={{ color: "white" }}>sign in</h5>
+                <h5 style={{ color: "white" }}>s'identifier</h5>
               </Link>
             </div>
           </Container>

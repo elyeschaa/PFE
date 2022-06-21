@@ -19,35 +19,35 @@ const Register = () => {
   return (
     <div className="register">
       <h1>
-        Welcome To Our <span style={{ color: "#007cb9" }}>Community</span>{" "}
+        Welcome To Our <span style={{ color: "#007cb9" }}>Bienvenue</span>{" "}
       </h1>
       <h1>
         <FaBook style={{ color: "#007cb9" }} />
       </h1>
       <div className="my-input">
-        <label>FirstName</label>
+        <label>Nom</label>
         <input type="text" name="firstName" onChange={userRegister} />
 
-        <label>LastName</label>
+        <label>Prénom</label>
         <input type="text" name="lastName" onChange={userRegister} />
         <label>Email</label>
         <input type="text" name="email" onChange={userRegister} />
-        <label>Adress</label>
+        <label>Adresse</label>
         <input type="text" name="address" onChange={userRegister} />
-        <label>Phone Number</label>
+        <label>numéro de téléphone</label>
         <input type="number" name="phonenumber" onChange={userRegister} />
-        <label>Zipcode</label>
+        <label>Code Postal</label>
         <input type="number" name="zipcode" onChange={userRegister} />
-        <label>Password</label>
+        <label>Mot de passe</label>
         <input type="password" name="password" onChange={userRegister} />
       </div>
       <div className="last">
-        <button style={{backgroundColor:"#007cb9"}} onClick={handleRegister}>Confirm</button>
-        <h5>Already a member ? </h5>
+        <button style={{backgroundColor:"#007cb9"}} onClick={handleRegister}>Confirmer</button>
+        <h5>Dèja membre ? </h5>
 
         <h5>
           <Link to="/login" style={{ color: "#8dc6ff", textDecoration: "none" }}>
-            Sign In
+            S'inscrire
           </Link>
         </h5>
       </div>

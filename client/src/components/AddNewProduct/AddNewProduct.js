@@ -22,7 +22,6 @@ function AddNewProduct() {
   const [success, setSuccess] = useState(false);
   const [button, setButton] = useState(true);
 
-  console.log(success);
 
   const handleAddBook = (e) => {
     setNewBook({ ...newBook, [e.target.name]: e.target.value });
@@ -70,27 +69,27 @@ function AddNewProduct() {
     <div>
       <div className="row">
         <div className="col-md-8">
-          <h2>Add New Products</h2>
+          <h2>Ajouter un livre</h2>
           <form onSubmit={addBook}>
-            <h5>Title</h5>
+            <h5>Titre</h5>
             <input
               className="form-control mb-2 mr-sm-2"
-              placeholder="title"
+              placeholder="titre"
               type="text"
               value={title}
               name="title"
               onChange={(e) => setTitle(e.target.value)}
             />
-            <h5>Author</h5>
+            <h5>Auteur</h5>
             <input
               className="form-control mb-2 mr-sm-2"
-              placeholder="title"
+              placeholder="Nom"
               type="text"
               value={author}
               name="author"
               onChange={(e) => setAuthor(e.target.value)}
             />
-            <h5>Realese Date</h5>
+            <h5>Date de sortie</h5>
             <input
               className="form-control mb-2 mr-sm-2"
               placeholder="date"
@@ -99,7 +98,7 @@ function AddNewProduct() {
               name="date"
               onChange={(e) => setDate(e.target.value)}
             />
-            <h5>Category</h5>
+            <h5>Categorie</h5>
             <input
               className="form-control mb-2 mr-sm-2"
               placeholder="type"
@@ -108,7 +107,7 @@ function AddNewProduct() {
               name="type"
               onChange={(e) => setType(e.target.value)}
             />
-            <h5>Rating</h5>
+            <h5>Évaluation</h5>
             <input
               className="form-control mb-2 mr-sm-2"
               placeholder="rating"
@@ -117,7 +116,7 @@ function AddNewProduct() {
               name="rating"
               onChange={(e) => setRating(e.target.value)}
             />
-            <h5>Price</h5>
+            <h5>Prix</h5>
             <input
               className="form-control mb-2 mr-sm-2"
               placeholder="price"
@@ -146,7 +145,7 @@ function AddNewProduct() {
                 color: "white",
               }}
             >
-              Add New Product
+              Ajouter un livre
             </button>
             {success ? <Success success="Product Added Successfully" /> : null}
           </form>

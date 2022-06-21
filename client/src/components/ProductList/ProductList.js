@@ -1,23 +1,20 @@
-import React, { useState, useEffect } from "react";
-import Loader from "../Loader/Loader";
-// import Error from "../Error/Error";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 function ProductsList({ books }) {
-  const [loading, setLoading] = useState(true);
-  console.log(books);
   return (
     <div>
-      <h2 className="usertitle">Products List</h2>
+      <h2 className="usertitle">Liste de produits</h2>
 
       <table className="tbadmin table table-bodered ">
         <thead>
           <tr>
-            <th>Products Name</th>
-            <th>Prices</th>
+            <th>Nom du produit</th>
+            <th>Prix</th>
             <th>Stock</th>
-            <th>Products ID</th>
+            <th>Produits ID</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -34,10 +31,16 @@ function ProductsList({ books }) {
                   <i
                     className="delete far fa-trash-alt mr-3 "
                     onClick={() => {
-                      // dispatch(deleteProduct(product._id));
+                      axios
+                        .delete(`/api/books/deleteBook/${product._id}`)
+                        .then((res) => {
+                          toast.success(`${product.title} a été supprimé`);
+                          window.location.reload();
+                        })
+                        .catch((err) => console.log(err));
                     }}
                   ></i>{" "}
-                  <Link to={`/admin/editproduct/${product._id}`}>
+                  <Link to={`/admin/editBook/${product._id}`}>
                     <i className="fas fa-edit"></i>
                   </Link>
                 </td>

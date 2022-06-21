@@ -7,6 +7,9 @@
 .admin {
   display: flex;
   justify-content: space-around;
-  background-color: rgb(255, 166, 0);
+  background-color: #27296d;
   margin-top: 1cm;
+  margin-bottom: 1cm;
+
+  margin-left: 200px;
 }

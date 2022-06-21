@@ -46,7 +46,7 @@ const Test = ({ books }) => {
                 />
                 , ,<p class="info">{book.description}</p>
                 <Link to={`/bookDescription/${book._id}`}>
-                  <button type="submit">See the Book</button>
+                  <button type="submit">Voir plus</button>
                 </Link>
               </div>
             </div>

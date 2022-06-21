@@ -18,8 +18,6 @@ function BookDescription({ books, cartItems, setCartItems }) {
     setCartItems([...cartItems, { ...book, quantity: 1 }]);
   };
 
-  console.log(book.bookImg);
-
   return (
     <div>
       <div className="row">
@@ -36,7 +34,7 @@ function BookDescription({ books, cartItems, setCartItems }) {
         </div>
         <div className="col-md-6">
           <div className="m-2">
-            <h3>Price : {book.price} </h3>
+            <h3>Prix: {book.price} </h3>
             <hr />
             <h3>
               {/* Select Quantity :{" "} */}
@@ -56,7 +54,7 @@ function BookDescription({ books, cartItems, setCartItems }) {
             <h3>Description : {book.description}</h3>
             <hr />
             <button onClick={addProduct} className="btn">
-              ADD TO CART
+              AJOUTER AU PANIER
             </button>
           </div>
           <hr />

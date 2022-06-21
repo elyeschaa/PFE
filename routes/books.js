@@ -31,10 +31,8 @@ let uploadPost = multer({
 });
 router.post("/createBook", uploadPost.single("bookImg"), async (req, res) => {
   try {
-    console.log("req body ", req.body);
     const { author, title, date, type, isNewBook, description, price, rating } =
       req.body;
-    console.log("req files ", req.file);
     const book = await Book.create({
       bookImg: req.file.filename,
       author,
@@ -52,7 +50,6 @@ router.post("/createBook", uploadPost.single("bookImg"), async (req, res) => {
       data: book,
     });
   } catch (err) {
-    console.log(err, "errrrrrrrrrrrrrrrrrr");
     res.status(500).json({ status: false, messsage: err });
   }
 });
@@ -102,15 +99,17 @@ router.get("/book/:id", async (req, res) => {
 
 router.put("/editBook/:id", async (req, res) => {
   try {
-    if (book) {
-      await Book.findByIdAndUpdate({ ...req.body });
-    } else {
-      res.status(200).json({
-        status: true,
-        message: "book does not exist",
-      });
-    }
+    const { id } = req.params;
+
+    await Book.findByIdAndUpdate(id, {
+      ...req.body,
+    });
+
+    let book = await Book.findById(id);
+
+    res.status(200).json({ status: true, message: "book edited", data: book });
   } catch (err) {
+    console.log(err);
     res.status(500).json({ status: false, message: err });
   }
 });

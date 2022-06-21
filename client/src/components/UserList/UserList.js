@@ -8,15 +8,15 @@ function UsersList({ userList }) {
 
   return (
     <div>
-      <h2 className="usertitle">Users List</h2>
+      <h2 className="usertitle">Liste des utilisateurs</h2>
 
       <table className="tbadmin table table-bodered ">
         <thead>
           <tr>
-            <th>Users ID</th>
-            <th>Users Name</th>
-            <th>Users E-mail</th>
-            <th>Delete Users</th>
+            <th>Identifiant</th>
+            <th>Nom</th>
+            <th>E-mail</th>
+            <th>Supprimer utilisateur</th>
           </tr>
         </thead>
 
@@ -36,7 +36,7 @@ function UsersList({ userList }) {
                         .delete(`/api/admin/deleteUser/${user._id}`)
                         .then((res) => {
                           toast.success(
-                            `${user.firstName} ${user.lastName} has been deleted`
+                            `${user.firstName} ${user.lastName} a été supprimé`
                           );
                           window.location.reload();
                         })

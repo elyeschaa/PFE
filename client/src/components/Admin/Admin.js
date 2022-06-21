@@ -15,25 +15,25 @@ function Admin() {
           <ul className="admin">
             <li>
               <Link to="/admin/usersList" style={{ color: "white" }}>
-                Users List
+                Liste des utilisateurs
               </Link>
             </li>
             <li>
               <Link to="/admin/productsList" style={{ color: "white" }}>
                 {" "}
-                Products List{" "}
+                Liste des produits{" "}
               </Link>
             </li>
             <li>
               <Link to="/admin/addNewProduct" style={{ color: "white" }}>
                 {" "}
-                Add New Product{" "}
+                Ajouter un livre{" "}
               </Link>
             </li>
             <li>
               <Link to="/admin/ordersList" style={{ color: "white" }}>
                 {" "}
-                Orders List{" "}
+                Liste des commandes{" "}
               </Link>
             </li>
           </ul>
