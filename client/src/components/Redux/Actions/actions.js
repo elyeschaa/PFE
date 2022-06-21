@@ -25,6 +25,7 @@ export const login = (payload) => async (dispatch) => {
     await axios
       .post("/api/user/login", payload.newUser)
       .then((res) => {
+        console.log(res.data, "omaaaaaaaaaaaaar is here");
         localStorage.setItem("token", res.data.token);
         payload.history.push("/");
         payload.history.go(0);

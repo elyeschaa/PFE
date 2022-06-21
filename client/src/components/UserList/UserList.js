@@ -38,6 +38,7 @@ function UsersList({ userList }) {
                           toast.success(
                             `${user.firstName} ${user.lastName} has been deleted`
                           );
+                          window.location.reload();
                         })
                         .catch((err) => console.log(err));
                     }}
